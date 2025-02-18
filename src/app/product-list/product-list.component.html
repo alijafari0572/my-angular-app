@@ -1,0 +1,18 @@
+<div class=container>
+<p>name:{{product.name}}</p>
+<p>price:{{product.price}}$</p>
+<p>color:{{product.color}}</p>
+<p>discount:{{getdiscountprice()}}$</p>
+<p>stock:{{product.stock>0 ? "avalbele":"not avalable"}}</p>
+
+<input type="text" class="form-control" [placeholder]="name" aria-label="Server" (input)="onChange($event)">
+
+<input type="text" class="form-control" [placeholder]="aname"  [(ngModel)]="aname">
+<p>name:{{aname}}</p>
+<button type="button" class="btn btn-danger" [disabled]="!(product.stock>0)">buy</button>
+<br>
+<br>
+<button type="button" class="btn btn-danger" (click)="decrise()">-</button>
+<p>{{cart}}</p>
+<button type="button" class="btn btn-danger" (click)="increase()" >+</button>
+</div>
